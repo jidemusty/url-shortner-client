@@ -1,0 +1,29 @@
+.button {
+	display: inline-block;
+	font: inherit;
+	font-weight: 800;
+	border: 0;
+	padding: 15px 30px;
+	outline: none;
+	border-radius: 3px;
+	cursor: pointer;
+	background-color: #EEE;
+	box-shadow: 0 5px #D0D0D0;
+	transition: box-shadow 300ms;
+
+	&:hover {
+		top: 2px;
+		position: relative;
+		box-shadow: 0 3px #D0D0D0;
+	}
+
+	&--blue {
+		color: #FFF;
+		background-color: #0080FF;
+		box-shadow: 0 3px #0F52BA;
+
+		&:hover {
+			box-shadow: 0 3px #0F52BA;
+		}
+	}
+}
