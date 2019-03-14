@@ -1,3 +1,5 @@
 <template>
-  <p>Stats</p>
+  <div class="container container--centered">
+      Stats
+    </div>
 </template>

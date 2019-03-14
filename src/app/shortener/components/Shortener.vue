@@ -1,3 +1,5 @@
 <template>
-    <p>Shortner</p>
+    <div class="container container--centered">
+      Home
+    </div>
 </template>
