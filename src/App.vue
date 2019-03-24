@@ -1,12 +1,18 @@
 <template>
   <div id="app">
+    <message />
     <router-view/>
   </div>
 </template>
 
 <script>
+import Message from '@/app/global/components/Message'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Message
+  }
 }
 </script>
 

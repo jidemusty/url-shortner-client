@@ -4,6 +4,10 @@
   padding: 20px;
   width: 100%;
 
+  &--no-padding {
+    padding: 0;
+  }
+
   &--centered {
     display: flex;
     align-items: center;

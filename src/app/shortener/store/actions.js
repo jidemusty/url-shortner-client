@@ -1,6 +1,6 @@
 import * as api from '../api'
 
-export const shortenUrl = ({ commit, state }) => {
+export const shortenUrl = ({ commit, dispatch, state }) => {
   commit('setShortened', null)
   commit('setWaiting', true)
   api.post({ url: state.url }).then((response) => {
@@ -8,6 +8,9 @@ export const shortenUrl = ({ commit, state }) => {
     commit('setUrl', null)
     commit('setWaiting', false)
   }).catch((error) => {
-    console.log(error.response)
+    if (error.response.status === 422) {
+      dispatch('setMessage', error.response.data.url[0], { root: true })
+    }
+    commit('setWaiting', false)
   })
 }
