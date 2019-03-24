@@ -9,16 +9,18 @@
       >
     </form>
 
-    <div class="result" v-if="shortened">
-      <div class="result__details">
-        <div class="result__original">
-          <span>{{ shortened.original_url }}</span> is now
+    <transition enter-active-class="animate animate--grow">
+      <div class="result" v-if="shortened">
+        <div class="result__details">
+          <div class="result__original">
+            <span>{{ shortened.original_url }}</span> is now
+          </div>
+          <a :href="shortened.shortened_url" target="_blank" class="result__url">{{ shortened.shortened_url }}</a>
+          <router-link :to="{ name: 'stats', params: { code: shortened.code } }" class="result__stats">Get Stats</router-link>
         </div>
-        <a :href="shortened.shortened_url" target="_blank" class="result__url">{{ shortened.shortened_url }}</a>
-        <router-link :to="{ name: 'stats', params: { code: shortened.code } }" class="result__stats">Get Stats</router-link>
+        <button class="button button--blue">Copy to clipboard</button>
       </div>
-      <button class="button button--blue">Copy to clipboard</button>
-    </div>
+    </transition>
 
     <div class="notice" v-if="url && !shortened && !waiting">Hit return when you are done</div>
 
