@@ -81,12 +81,12 @@ export default {
     border: 0;
     outline: none;
     border-radius: 3px;
-    box-shadow: 0 0 50px rgba(#fff, 0.1);
+    box-shadow: 0 0 50px rgba(#FFF, 0.1);
   }
 }
 
 .notice {
-  color: #fff;
+  color: #2C3E50;
   font-size: 1.1em;
   font-weight: 500px;
 }
@@ -96,14 +96,14 @@ export default {
   text-align: center;
 
   &__details {
-    color: #fff;
+    color: #2C3E50;
     font-size: 1.4em;
   }
 
   &__url {
     display: block;
     margin-bottom: 20px;
-    color: #fff;
+    color: #2C3E50;
   }
 
   &__original {
@@ -125,7 +125,7 @@ export default {
 
   &__stats {
     display: block;
-    color: #fff;
+    color: #2C3E50;
     font-size: 0.9em;
     margin-bottom: 20px;
   }

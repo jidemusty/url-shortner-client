@@ -56,7 +56,7 @@ export default {
 
 <style lang="scss">
   .stats {
-    color: #FFF;
+    color: #2C3E50;
     font-size: 1.2em;
     font-weight: 500;
     width: 100%;
@@ -69,7 +69,7 @@ export default {
     }
 
     &__loading {
-      color: #FFF;
+      color: #2C3E50;;
       font-size: 1.2em;
       font-weight: 500;
     }
