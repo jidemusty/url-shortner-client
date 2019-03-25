@@ -1,0 +1,12 @@
+{
+  "name": "dist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm install express"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
