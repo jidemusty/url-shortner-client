@@ -15,10 +15,10 @@
           <div class="result__original">
             <span>{{ shortened.original_url }}</span> is now
           </div>
-          <a :href="shortened.shortened_url" target="_blank" class="result__url">{{ shortened.shortened_url }}</a>
+          <a :href="shortened.shortened_url" target="_blank" class="result__url" id="url">{{ shortened.shortened_url }}</a>
           <router-link :to="{ name: 'stats', params: { code: shortened.code } }" class="result__stats">Get Stats</router-link>
         </div>
-        <button class="button button--blue">Copy to clipboard</button>
+        <button class="button button--blue" id="copy" data-clipboard-target="#url">Copy to clipboard</button>
       </div>
     </transition>
 
@@ -29,14 +29,17 @@
 </template>
 
 <script>
+import Clipboard from 'clipboard'
 import { mapGetters, mapMutations, mapActions } from 'vuex'
+
 export default {
   methods: {
     ...mapMutations({
       setUrl: 'shortener/setUrl'
     }),
     ...mapActions({
-      shortenUrl: 'shortener/shortenUrl'
+      shortenUrl: 'shortener/shortenUrl',
+      setMessage: 'setMessage'
     })
   },
   computed: {
@@ -53,6 +56,14 @@ export default {
         this.setUrl(value)
       }
     }
+  },
+  mounted () {
+    let clipboard = new Clipboard('#copy')
+
+    clipboard.on('success', (e) => {
+      this.setMessage('Copied to clipboard!')
+      e.clearSelection()
+    })
   }
 }
 </script>
